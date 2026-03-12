@@ -17,29 +17,32 @@ function Signup() {
     })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+ const handleSubmit = async (e) => {
+  e.preventDefault()
 
-    try {
+  try {
 
-     await axios.post("http://localhost:5000/signup", form)
+    await axios.post(
+      "https://weeding-services-app.onrender.com/signup",
+      form
+    )
 
-navigate("/")
-    
+    alert("Signup successful")
 
-    setTimeout(() => {
-  navigate("/")
-}, 500)
-      setForm({
-        name:"",
-        email:"",
-        password:""
-      })
+    setForm({
+      name: "",
+      email: "",
+      password: ""
+    })
 
-    } catch (error) {
-      alert("Signup failed")
-    }
+    navigate("/")   // go to home page
+
+  } catch (error) {
+
+    alert("Signup failed")
+
   }
+}
 
   return (
 

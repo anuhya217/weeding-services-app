@@ -24,8 +24,10 @@ function VendorDetails() {
 
     try {
 
-      await axios.post("http://localhost:5000/inquiry", form)
-
+       await axios.post(
+  "https://weeding-services-app.onrender.com/inquiry",
+  { ...form, vendorId: id }
+)
       alert("Inquiry sent successfully!")
 
       setForm({
